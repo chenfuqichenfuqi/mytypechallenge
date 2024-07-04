@@ -48,3 +48,6 @@ type cases = [
 type AppendToObject<T, U extends string, V> = {
   [K in keyof T | U]: K extends U ? V : K extends keyof T ? T[K] : never
 }
+type AppendToObject1<T, U extends keyof any, V> = {
+  [K in keyof T | U]: K extends U ? V : K extends keyof T ? T[K] : never
+}
